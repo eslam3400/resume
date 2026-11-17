@@ -1,0 +1,80 @@
+# Single source of truth for the résumé.
+# Edit this file only, then export the PDF from resume.typ in the Typst web app
+# and regenerate the web page with: python3 build_web.py
+# Supported subset: quoted scalars, lists of mappings, and nested "- " lists.
+
+name: "Eslam Magdy Shehata"
+title: "Senior Software Engineer"
+location: "Alexandria, Egypt"
+email: "hi@eslam.ai"
+phone: "+20 120 624 2025"
+phone_link: "+201206242025"
+eyebrow: "Backend systems · Integrations · Developer experience"
+intro: "Software engineer with 7 years of experience building backend services and B2B/B2C products for international markets. Combines systems architecture, third-party integrations and hands-on delivery across travel, fintech, conversational commerce and fleet operations. Focused on reducing technical debt and applying AI agents and context engineering to improve developer workflows."
+
+experience:
+  - company: "FlyAkeed"
+    role: "Senior Software Engineer"
+    dates: "Feb 2025 – Present"
+    location: "Saudi Arabia"
+    bullets:
+      - "Build backend microservices for corporate travel approval workflows and payments."
+      - "Integrate third-party ticketing systems and hotel providers for real-time availability and booking synchronization."
+      - "Introduce AI agents and context engineering into the development lifecycle to improve developer experience and shipping velocity."
+      - "Refactor legacy modules to eliminate technical debt and improve maintainability and scalability."
+
+  - company: "Zetta"
+    role: "Senior Integration & Automation Engineer · Part-time"
+    dates: "Jun 2024 – Apr 2026"
+    location: "USA"
+    bullets:
+      - "Re-architected a legacy cron system as a high-performance Node.js extension, cutting data processing time from 12 hours to 38 minutes."
+      - "Built AI agents using context engineering to reduce LLM errors, enforce coding standards and automate routine tasks."
+      - "Created a centralized dashboard aggregating real-time data from disparate sources, reducing manual reconciliation for stakeholders."
+      - "Enhanced a .NET vehicle-tracking backend with historical route tracking; moved into R&D to bridge business and technical needs."
+
+  - company: "MAL"
+    role: "Founding Software Engineer"
+    dates: "Sep 2022 – Jun 2024"
+    location: "Saudi Arabia"
+    bullets:
+      - "Built a two-sided fintech and marketing marketplace from greenfield to production as the first engineering hire."
+      - "Delivered a React Native mobile app with QR loyalty flows and Apple Pay, plus a Next.js merchant dashboard for campaigns and loyalty metrics."
+      - "Built a digital wallet with immutable transaction logging and auditing; maintained a payment gateway SDK fork for custom transaction flows."
+      - "Secured production systems using OWASP Top 10 guidance, SonarQube, Snyk and npm audit."
+      - "Established GitHub Actions CI/CD, cutting deployment time from hours to minutes; documented systems, interviewed candidates, mentored developers and served as Scrum Master."
+
+  - company: "Twerlo"
+    role: "Software Engineer"
+    dates: "Sep 2021 – Sep 2022"
+    location: "Dubai"
+    bullets:
+      - "Modernized legacy Node.js monoliths into modular services and standardized versioned REST APIs, reducing integration bugs."
+      - "Built backend state machines for WhatsApp food ordering, customization and merchant POS synchronization."
+      - "Optimized database schemas with indexing, materialized views and caching to improve API response times at peak traffic."
+      - "Integrated Stripe, Tap and PayTabs payments with Foodics and Odoo POS systems."
+      - "Handled 24/7 production on-call incidents within SLA and created a centralized onboarding knowledge base."
+
+  - company: "WeWork"
+    role: "Software Engineer · Generalist"
+    dates: "Aug 2019 – Sep 2021"
+    location: "Egypt"
+    bullets:
+      - "Delivered 6+ client projects end-to-end across Laravel, Node.js, .NET, Vue, React Native and Flutter."
+      - "Translated client requirements into technical specifications and managed the full SDLC, including server configuration and production delivery."
+
+skills:
+  - label: "Languages & frameworks"
+    values: "Node.js · .NET · Laravel · React Native · Next.js · Vue · Flutter"
+  - label: "APIs & data"
+    values: "REST APIs · database optimization · indexing & materialized views · caching"
+  - label: "DevOps & security"
+    values: "GitHub Actions · CI/CD · OWASP Top 10 · SonarQube · Snyk · npm audit"
+  - label: "AI & automation"
+    values: "AI agents · context engineering · LLM error reduction"
+
+education:
+  degree: "Computer Science"
+  school: "Menofia University"
+  dates: "2017 – 2022"
+  location: "Egypt"
