@@ -1,77 +1,119 @@
-# Single source of truth for the résumé.
-# Edit this file only, then export the PDF from resume.typ in the Typst web app
-# and regenerate the web page with: python3 build_web.py
+# Single source of truth for the résumé — keep EVERY role, project and detail here,
+# even the ones that don't fit the one-page PDF. Each role has a `detail` flag:
+#   detail: "full"     -> company header + bullets (default)
+#   detail: "compact"  -> single line, bullets kept in the file but not rendered
+# Flip a role to "full" when you have room; nothing is deleted.
+# Then export the PDF from resume.typ in the Typst web app and run: python3 build_web.py
 # Supported subset: quoted scalars, lists of mappings, and nested "- " lists.
 
 name: "Eslam Magdy Shehata"
 title: "Senior Software Engineer"
-location: "Alexandria, Egypt"
+location: "Alexandria, Egypt · Remote (US/EU hours)"
 email: "hi@eslam.ai"
 phone: "+20 120 624 2025"
 phone_link: "+201206242025"
-eyebrow: "Backend systems · Integrations · Developer experience"
-intro: "Software engineer with 7 years of experience building backend services and B2B/B2C products for international markets. Combines systems architecture, third-party integrations and hands-on delivery across travel, fintech, conversational commerce and fleet operations. Focused on reducing technical debt and applying AI agents and context engineering to improve developer workflows."
+eyebrow: "Backend · Integrations · Payments · Reliability · AI-assisted engineering"
+intro: "Backend engineer with 7 years building payment, integration and logistics platforms. Founding engineer at Vectora, a school-transport platform, where I own district invoicing, provider payouts and partner integrations."
+
+links:
+  - label: "GitHub"
+    url: "https://github.com/eslam3400"
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/in/eslam3400"
+  - label: "eslam.ai"
+    url: "https://eslam.ai"
 
 experience:
-  - company: "FlyAkeed"
-    role: "Senior Software Engineer"
-    dates: "Feb 2025 – Present"
-    location: "Saudi Arabia"
+  - company: "Vectora"
+    pref: "B2B SaaS for US school districts: plans, dispatches and tracks school and special-education trips."
+    dates: "May 2026 – Present"
+    location: "San Francisco, USA · Remote"
+    positions:
+      - role: "Founding Engineer · Full-time"
+        dates: "Sep 2026 – Present"
+      - role: "Founding Engineer · Part-time"
+        dates: "May 2026 – Aug 2026"
     bullets:
-      - "Build backend microservices for corporate travel approval workflows and payments."
-      - "Integrate third-party ticketing systems and hotel providers for real-time availability and booking synchronization."
-      - "Introduce AI agents and context engineering into the development lifecycle to improve developer experience and shipping velocity."
-      - "Refactor legacy modules to eliminate technical debt and improve maintainability and scalability."
+      - "Led the migration of 2 mobile apps, 4 web portals and the API off Replit and Supabase to Google Cloud (GKE, Cloud SQL Postgres 17, Firebase Auth, Firestore) with zero data loss and no password resets."
+      - "Replaced 1,275 Supabase calls and 150 edge functions with a NestJS API, Postgres row-level-security multi-tenancy and GitOps delivery through Terraform and Argo CD."
+      - "Built the integration service (NestJS, Kysely, Zod): the only path between the platform and outside providers for email, SMS sign-in codes, push, maps Motive and Damoov."
+      - "Logged every request, cron run and outbound call so external apps never reach internal APIs, and built the admin Integration Monitor (React 19, Vite, Tailwind 4, TanStack Query) on that data."
+      - "Own the Expo mobile apps end to end — features, bug fixes and releases to the App Store and Google Play through CI pipelines."
+      - "Hardened delivery with CircleCI security gates (Trivy, gitleaks, Sonar): fixed CVEs and pinned dependencies."
 
-  - company: "Zetta"
-    role: "Senior Integration & Automation Engineer · Part-time"
-    dates: "Jun 2024 – Apr 2026"
-    location: "USA"
+  - company: "FlyAkeed"
+    pref: "Saudi corporate travel platform: bookings, policy approvals and invoicing for companies."
+    role: "Senior Backend Engineer"
+    dates: "Feb 2025 – Nov 2026"
+    location: "Saudi Arabia · Remote"
     bullets:
-      - "Re-architected a legacy cron system as a high-performance Node.js extension, cutting data processing time from 12 hours to 38 minutes."
-      - "Built AI agents using context engineering to reduce LLM errors, enforce coding standards and automate routine tasks."
-      - "Created a centralized dashboard aggregating real-time data from disparate sources, reducing manual reconciliation for stakeholders."
-      - "Enhanced a .NET vehicle-tracking backend with historical route tracking; moved into R&D to bridge business and technical needs."
+      - "Owned payments and system integration for a travel platform serving ~700 clients and ~45k bookings per month."
+      - "Integrated airline ticketing and hotel supplier APIs for real-time availability, pricing and booking synchronisation."
+      - "Introduced AI agents that write, review and triage L3 escalations from tickets and logs, cutting report-to-fix time."
+      - "Reviewer for an 11-engineer team; led refactors that removed technical debt from legacy modules."
+
+  - company: "Zetta Global"
+    pref: "US transport-tech consultancy building fleet tracking and data-integration systems for operators."
+    dates: "Jun 2024 – Mar 2026"
+    location: "Texas, USA · Remote"
+    positions:
+      - role: "Product Engineer · Contract"
+        dates: "May 2025 – Mar 2026"
+      - role: "Senior Integration & AI Engineer · Full-time"
+        dates: "Jun 2024 – Apr 2025"
+    bullets:
+      - "Re-architected a legacy cron pipeline into a Node.js service handling ~17M rows a day, cutting the run from 12 hours to 38 minutes (~19×)."
+      - "Extended a .NET vehicle-tracking backend with historical route tracking for Beacon Mobility (~14k vehicles, 27 brands), ending manual stakeholder reconciliation."
+      - "Built context-engineered AI agents that enforce coding standards and automate routine engineering tasks."
 
   - company: "MAL"
-    role: "Founding Software Engineer"
-    dates: "Sep 2022 – Jun 2024"
-    location: "Saudi Arabia"
+    pref: "Saudi fintech marketplace: loyalty campaigns, digital wallet payments and a merchant dashboard."
+    role: "Founding Engineer"
+    dates: "Jan 2023 – Jun 2024"
+    location: "Saudi Arabia · Remote"
     bullets:
       - "Built a two-sided fintech and marketing marketplace from greenfield to production as the first engineering hire."
-      - "Delivered a React Native mobile app with QR loyalty flows and Apple Pay, plus a Next.js merchant dashboard for campaigns and loyalty metrics."
-      - "Built a digital wallet with immutable transaction logging and auditing; maintained a payment gateway SDK fork for custom transaction flows."
-      - "Secured production systems using OWASP Top 10 guidance, SonarQube, Snyk and npm audit."
-      - "Established GitHub Actions CI/CD, cutting deployment time from hours to minutes; documented systems, interviewed candidates, mentored developers and served as Scrum Master."
+      - "Delivered a React Native app (QR loyalty, Apple Pay), a Next.js merchant dashboard and an audited digital wallet."
+      - "Hardened production to OWASP Top 10, cut deploys from hours to minutes with GitHub Actions CI/CD, and mentored developers."
 
   - company: "Twerlo"
+    pref: "Dubai conversational-commerce platform for WhatsApp ordering, loyalty and POS-synced operations."
     role: "Software Engineer"
-    dates: "Sep 2021 – Sep 2022"
-    location: "Dubai"
+    detail: "compact"
+    dates: "Apr 2021 – Oct 2022"
+    location: "Dubai, UAE"
     bullets:
-      - "Modernized legacy Node.js monoliths into modular services and standardized versioned REST APIs, reducing integration bugs."
-      - "Built backend state machines for WhatsApp food ordering, customization and merchant POS synchronization."
-      - "Optimized database schemas with indexing, materialized views and caching to improve API response times at peak traffic."
-      - "Integrated Stripe, Tap and PayTabs payments with Foodics and Odoo POS systems."
-      - "Handled 24/7 production on-call incidents within SLA and created a centralized onboarding knowledge base."
+      - "Modernized legacy Node.js monoliths into modular services with versioned REST APIs, reducing integration bugs."
+      - "Built backend state machines for WhatsApp ordering and merchant POS sync; integrated Stripe, Tap and PayTabs with Foodics and Odoo."
+      - "Tuned schemas with indexing, materialized views and caching to keep API latency stable at peak; handled 24/7 on-call incidents within SLA."
 
-  - company: "WeWork"
-    role: "Software Engineer · Generalist"
-    dates: "Aug 2019 – Sep 2021"
-    location: "Egypt"
-    bullets:
-      - "Delivered 6+ client projects end-to-end across Laravel, Node.js, .NET, Vue, React Native and Flutter."
-      - "Translated client requirements into technical specifications and managed the full SDLC, including server configuration and production delivery."
+  - company: "Take Theme"
+    role: "Founding Engineer · Part-time"
+    dates: "Nov 2024 – Mar 2025"
+    location: "Egypt · Remote"
+    detail: "compact"
+
+  - company: "Kashier"
+    role: "Software Engineer"
+    dates: "Oct 2022 – Jun 2023"
+    location: "Cairo, Egypt · Hybrid"
+    detail: "compact"
+
+  - company: "We Work pro"
+    role: "Junior Software Engineer"
+    dates: "Aug 2019 – Apr 2021"
+    location: "Saudi Arabia · Remote"
+    detail: "compact"
 
 skills:
   - label: "Languages & frameworks"
-    values: "Node.js · .NET · Laravel · React Native · Next.js · Vue · Flutter"
-  - label: "APIs & data"
-    values: "REST APIs · database optimization · indexing & materialized views · caching"
-  - label: "DevOps & security"
-    values: "GitHub Actions · CI/CD · OWASP Top 10 · SonarQube · Snyk · npm audit"
-  - label: "AI & automation"
-    values: "AI agents · context engineering · LLM error reduction"
+    values: "TypeScript · Node.js · NestJS · .NET · Laravel · React · React Native · Next.js · Vue · Flutter"
+  - label: "Backend & data"
+    values: "microservices · REST APIs · Postgres row-level security · state machines · materialized views · caching"
+  - label: "Cloud & delivery"
+    values: "GCP (GKE, Cloud SQL, Firestore) · Firebase Auth · Terraform · Argo CD · GitHub Actions · CircleCI"
+  - label: "Payments, security & AI"
+    values: "Stripe · Tap · PayTabs · Apple Pay · Foodics · Odoo · OWASP · SonarQube · Trivy · AI agents"
 
 education:
   degree: "Computer Science"
