@@ -16,7 +16,7 @@ email: "hi@eslam.ai"
 phone: "+20 120 624 2025"
 phone_link: "+201206242025"
 eyebrow: "Backend · Integrations · Payments · Reliability · AI-assisted engineering"
-intro: "Backend engineer with 7 years building payment, integration and logistics platforms. Founding engineer at Vectora, a school-transport platform, where I own partner integrations."
+intro: "Engineer with 7 years building payments, integrations and data-heavy backends for fintech, travel and transport companies. Founding engineer at Vectora, where I took a vibe-coded prototype to a production platform on Google Cloud — zero data loss, no password resets — and now own invoicing, provider payouts and every external integration. I ship with AI in the loop: agents that triage incidents, review code and cut three-day fixes to under an hour."
 
 links:
   - label: "GitHub"
