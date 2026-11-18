@@ -3,6 +3,9 @@
 #   detail: "full"     -> company header + bullets (default)
 #   detail: "compact"  -> single line, bullets kept in the file but not rendered
 # Flip a role to "full" when you have room; nothing is deleted.
+# A role may also carry an optional `story`: a list of quoted paragraphs holding
+# the longer narrative behind it. `story` is reference-only — the PDF and the
+# website do not render it for now.
 # Then export the PDF from resume.typ in the Typst web app and run: python3 build_web.py
 # Supported subset: quoted scalars, lists of mappings, and nested "- " lists.
 
@@ -13,13 +16,13 @@ email: "hi@eslam.ai"
 phone: "+20 120 624 2025"
 phone_link: "+201206242025"
 eyebrow: "Backend · Integrations · Payments · Reliability · AI-assisted engineering"
-intro: "Backend engineer with 7 years building payment, integration and logistics platforms. Founding engineer at Vectora, a school-transport platform, where I own district invoicing, provider payouts and partner integrations."
+intro: "Backend engineer with 7 years building payment, integration and logistics platforms. Founding engineer at Vectora, a school-transport platform, where I own partner integrations."
 
 links:
   - label: "GitHub"
     url: "https://github.com/eslam3400"
   - label: "LinkedIn"
-    url: "https://www.linkedin.com/in/eslam3400"
+    url: "https://linkedin.com/in/eslam3400"
   - label: "eslam.ai"
     url: "https://eslam.ai"
 
@@ -33,13 +36,25 @@ experience:
         dates: "Sep 2026 – Present"
       - role: "Founding Engineer · Part-time"
         dates: "May 2026 – Aug 2026"
+    story:
+      - "Vectora reached out to me while it was racing to turn a fast-growing idea into a real product. The founders had built a prototype on Replit: four web portals, two mobile apps and a Supabase backend. Demand was picking up, but every real ride test broke something, so the product couldn't go in front of districts."
+      - "I joined part-time to turn that vibe-coded prototype into a dependable MVP. For four months I fixed issues, cleaned up a database full of duplicated tables, columns and records, stabilized deployments, and set up context-engineered AI skills so the team could apply solid mobile, backend and frontend practices. Replit became reliable enough to ship releases on."
+      - "We then moved off Replit and Supabase entirely onto Google Cloud, with our own pipelines, cloud storage and secret management, and with zero data loss and no password resets. We fixed security issues, refactored the whole system, merged shared code, unified theming across the apps, and replaced Supabase edge functions and SQL logic with a NestJS API on plain Postgres."
+      - "I took ownership of the integration service, the single gateway for every inbound and outbound call to outside providers like Google Maps, Motive and Damoov, and built a monitor dashboard that shows exactly where integrations fail. On mobile, after the move to React Native, I built a shake-to-open debug console so QA can see logs and network requests instead of guessing."
+      - "Finally, I built an AI-driven engineering workflow. A crash in the app triggers Sentry, which posts to Slack, and a coding agent picks it up, gathers context, opens and assigns a ticket, investigates, proposes a fix and implements it. Together with AI code-review bots, best-practice enforcement and a shared engineering workspace, this cut incident resolution from about three days to under an hour, and fixes now pass QA on the first try."
     bullets:
-      - "Led the migration of 2 mobile apps, 4 web portals and the API off Replit and Supabase to Google Cloud (GKE, Cloud SQL Postgres 17, Firebase Auth, Firestore) with zero data loss and no password resets."
+      - "Joined to turn a Replit-built, Supabase-backed prototype (2 mobile apps, 4 web portals) into a production-ready MVP after it kept breaking in live ride tests."
+      - "Stabilized the prototype in 4 months: removed duplicated tables, columns and records, fixed deployments, and added context-engineered AI skills for mobile, backend and frontend best practices."
+      - "Led the migration of 2 mobile apps, 4 web portals and the API off Replit and Supabase to Google Cloud (GKE, Cloud SQL Postgres 17, Firebase Auth, Firestore, Cloud Storage, Secret Manager) with zero data loss and no password resets."
       - "Replaced 1,275 Supabase calls and 150 edge functions with a NestJS API, Postgres row-level-security multi-tenancy and GitOps delivery through Terraform and Argo CD."
-      - "Built the integration service (NestJS, Kysely, Zod): the only path between the platform and outside providers for email, SMS sign-in codes, push, maps Motive and Damoov."
-      - "Logged every request, cron run and outbound call so external apps never reach internal APIs, and built the admin Integration Monitor (React 19, Vite, Tailwind 4, TanStack Query) on that data."
-      - "Own the Expo mobile apps end to end — features, bug fixes and releases to the App Store and Google Play through CI pipelines."
-      - "Hardened delivery with CircleCI security gates (Trivy, gitleaks, Sonar): fixed CVEs and pinned dependencies."
+      - "Refactored the platform after the move: fixed security issues, merged duplicated shared code and unified theming across all apps."
+      - "Built the integration service (NestJS, Kysely, Zod): the only path between the platform and outside providers for email, SMS sign-in codes, push, Google Maps, Motive and Damoov."
+      - "Logged every request, cron run and outbound call so external apps never reach internal APIs, and built the admin Integration Monitor (React 19, Vite, Tailwind 4, TanStack Query) to pinpoint failing integrations."
+      - "Built a shake-to-open debug console in the React Native apps showing logs and network requests, ending guesswork in QA bug reports."
+      - "Built an AI incident pipeline (Sentry to Slack to a coding agent that opens, assigns, investigates and fixes the ticket), cutting incident resolution from ~3 days to under 1 hour with fixes passing QA first time."
+      - "Added AI code-review bots, automated best-practice enforcement and a centralized engineering workspace so every environment stays consistent."
+      - "Own the Expo/React Native apps end to end: features, bug fixes and releases to the App Store and Google Play through CI pipelines."
+      - "Hardened delivery with CircleCI security gates (Trivy, gitleaks, SonarQube): fixed CVEs and pinned dependencies."
 
   - company: "FlyAkeed"
     pref: "Saudi corporate travel platform: bookings, policy approvals and invoicing for companies."
